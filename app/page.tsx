@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "./_sections/HeroSection";
 import MessageSection from "./_sections/MessageSection";
+import FlavorSection from "./_sections/FlavorSection";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar/>
       <HeroSection/>
       <MessageSection/>
+      <FlavorSection/>
       <div className="h-dvh border-4 border-red-400"></div>
     </main>
   );
