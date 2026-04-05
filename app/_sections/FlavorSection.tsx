@@ -1,6 +1,5 @@
 import FlavorSlider from '@/components/FlavorSlider'
 import FlavorTitle from '@/components/FlavorTitle'
-import React from 'react'
 
 function FlavorSection() {
   return (
