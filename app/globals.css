@@ -271,8 +271,10 @@ body::-webkit-scrollbar {
   background-image: radial-gradient(circle, #f3ece2, #dcccb0);
 }
 
-.spin-circle {
-  animation: spin 20s linear infinite;
+@layer utilities {
+  .spin-circle {
+    animation: spin 20s linear infinite;
+  }
 }
 @keyframes spin {
   from {

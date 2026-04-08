@@ -2,6 +2,7 @@ import ClipPathTitle from '@/components/ClipPathTitle'
 import { SplitText, ScrollTrigger } from "gsap/all"
 import gsap from "gsap"
 import { useGSAP } from '@gsap/react'
+import VideoPinSection from '@/components/VideoPinSection'
 
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
@@ -83,6 +84,10 @@ function BenefitSection() {
               <p>And much more ...</p>
             </div>
           </div>
+        </div>
+
+        <div className='relative overlay-box'>
+          <VideoPinSection/>
         </div>
     </section>
   )
