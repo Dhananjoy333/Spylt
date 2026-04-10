@@ -212,6 +212,7 @@ body::-webkit-scrollbar {
       @apply rotate-[-5deg] md:-translate-y-12;
     }
 
+
     .vd-pin-section {
       @apply md:h-[110vh] h-dvh overflow-hidden md:!-translate-y-[15%] md:mt-0 mt-20;
 
