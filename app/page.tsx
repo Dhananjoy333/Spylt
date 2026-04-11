@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import NutritionSection from "./_sections/NutritionSection";
 import BenefitSection from "./_sections/BenefitSection";
 import TestimonialSection from "./_sections/TestimonialSection";
+import FooterSection from "./_sections/FooterSection";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -34,7 +35,7 @@ export default function Home() {
             <TestimonialSection/>
           </div>
 
-          <div className="h-dvh border-4 border-red-400 bg-amber-200"></div>
+          <FooterSection />
         </div>
       </div>
     </main>
