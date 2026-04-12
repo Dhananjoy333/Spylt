@@ -23,23 +23,24 @@ const FooterSection = () => {
           </h1>
         </div>
 
-        {isMobile ? (
-          <Image
-            src="/images/footer-drink.png"
-            alt=""
-            width={400}
-            height={400}
-            className="absolute top-0 object-contain"
-          />
-        ) : (
-          <video
-            src="/videos/splash.mp4"
-            autoPlay
-            playsInline
-            muted
-            className="absolute top-0 object-contain mix-blend-lighten"
-          />
-        )}
+        {/* Mobile Image */}
+    <Image
+      src="/images/footer-drink.png"
+      alt=""
+      width={400}
+      height={400}
+      className="absolute top-0 object-contain block md:hidden"
+    />
+
+    {/* Desktop Video */}
+    <video
+      src="/videos/splash.mp4"
+      autoPlay
+      playsInline
+      muted
+      className="absolute top-0 object-contain mix-blend-lighten hidden md:block"
+      preload="none"
+    />
 
         <div className="flex-center gap-5 relative z-10 md:mt-20 mt-5">
           <div className="social-btn">

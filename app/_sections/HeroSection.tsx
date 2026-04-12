@@ -68,28 +68,33 @@ function HeroSection() {
   return (
     <section className="bg-main-bg">
       <div className="hero-container">
-        {isTablet ? (
-          <>
-            {isMobile && (
-              <Image src="/images/hero-bg.png" alt="" width={4000} height={4000} className="absolute bottom-40 size-full object-cover" />
-            )}
-            <Image
-              src="/images/hero-img.png"
-              alt=""
-              width={4000}
-              height={4000}
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
-            />
-          </>
-        ) : (
-          <video
-            src="/videos/hero-bg.mp4"
-            className="absolute inset-0 w-full h-full size-full object-cover"
-            autoPlay
-            muted
-            playsInline
+        {/* Mobile / Tablet Images */}
+        <div className="block lg:hidden">
+          <Image
+            src="/images/hero-bg.png"
+            alt=""
+            width={4000}
+            height={4000}
+            className="absolute bottom-40 size-full object-cover"
           />
-        )}
+
+          <Image
+            src="/images/hero-img.png"
+            alt=""
+            width={4000}
+            height={4000}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
+          />
+        </div>
+
+        {/* Desktop Video */}
+        <video
+          src="/videos/hero-bg.mp4"
+          className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          playsInline
+        />
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
             <h1 className="hero-title mt-3 md:mt-4">Freaking Delicious</h1>

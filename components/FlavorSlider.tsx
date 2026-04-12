@@ -12,30 +12,47 @@ gsap.registerPlugin(ScrollTrigger);
 function FlavorSlider() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
-  const isTablet = useMediaQuery({
-    query: "(max-width: 1024px)",
+  const isMobile = useMediaQuery({
+    query: "(max-width: 800px)",
   });
+
+  const isLaptop = useMediaQuery({
+    query: "(max-width: 1280px)"
+  })
+
 
   useGSAP(() => {
     const scrollAmount =
       (sliderRef.current?.scrollWidth ?? 0) - window.innerWidth;
 
-    if (!isTablet) {
+      let extraScroll = 0
+
+      if(isMobile){
+        return
+      }else if(isLaptop){
+        extraScroll = 700;
+      }else{
+        extraScroll = 1500
+      }
+
+      const totalScroll = scrollAmount + extraScroll
+
+  
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".flavor-section",
           start: "2% top",
-          end: `+=${scrollAmount + 1500}px`,
+          end: `+=${totalScroll}px`,
           scrub: true,
           pin: true,
         },
       });
 
       tl.to(".flavor-section", {
-        x: `-${scrollAmount + 1500}px`,
+        x: `-${totalScroll}px`,
         ease: "power1.inOut",
       });
-    }
+    
 
     const titleTl = gsap.timeline({
       scrollTrigger: {
@@ -66,7 +83,7 @@ function FlavorSlider() {
         },
         "<",
       );
-  },[isTablet]);
+  },[isMobile, isLaptop]);
 
   return (
     <div ref={sliderRef} className="slider-wrapper">
@@ -89,7 +106,7 @@ function FlavorSlider() {
               alt="drinks"
               width={400}
               height={80}
-              className="drinks w-65 md:w-90 lg:w-150"
+              className="drinks w-65 md:w-90 lg:w-100 2xl:w-170 lg:h-120 2xl:h-250"
             />
 
             <Image
