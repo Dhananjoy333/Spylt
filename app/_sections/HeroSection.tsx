@@ -3,18 +3,10 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { SplitText, ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
-import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 function HeroSection() {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
-
-  const isTablet = useMediaQuery({
-    query: "(max-width: 1024px)",
-  });
 
   useGSAP(() => {
     const titleSplit = SplitText.create(".hero-title", {
